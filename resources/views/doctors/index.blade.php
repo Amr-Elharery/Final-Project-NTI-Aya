@@ -41,7 +41,7 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <div class="d-flex gap-3 flex-wrap justify-content-center" role="group">
-                        <a type="button" class="btn btn-outline-light navigation--button" href="./index.html">Home</a>
+                        <a type="button" class="btn btn-outline-light navigation--button" href="{{ route('home') }}">Home</a>
                         {{-- <a type="button" class="btn btn-outline-light navigation--button" href="./majors.html">majors</a> --}}
                         <a type="button" class="btn btn-outline-light navigation--button"
                             href="{{ route('doctors.index') }}">Doctors</a>
