@@ -41,7 +41,10 @@ class UserController extends Controller
             'userpassword' => 'required|string|min:8',
         ]);
 
-        if (auth()->attempt($credentials)) {
+        if (auth()->attempt([
+            'email' => $credentials['useremail'],
+            'password' => $credentials['userpassword']
+        ])) {
             return redirect()->route('doctors.index');
         }
 

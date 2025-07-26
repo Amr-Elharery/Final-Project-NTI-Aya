@@ -57,6 +57,11 @@
                     <li class="breadcrumb-item active" aria-current="page">login</li>
                 </ol>
             </nav>
+            @if($errors->any())
+                <div class="alert alert-danger">
+                    {{ $errors->first() }}
+                </div>
+            @endif
             <div class="d-flex flex-column gap-3 account-form mx-auto mt-5">
                 <form class="form" action="{{route('users.store')}}"method="POST">
                     @csrf
