@@ -45,11 +45,11 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <div class="d-flex gap-3 flex-wrap justify-content-center" role="group">
                         <a type="button" class="btn btn-outline-light navigation--button" href="./index.html">Home</a>
+                        {{-- <a type="button" class="btn btn-outline-light navigation--button" href="./majors.html">majors</a> --}}
                         <a type="button" class="btn btn-outline-light navigation--button"
-                            href="./majors.html">majors</a>
-                        <a type="button" class="btn btn-outline-light navigation--button"
-                            href="./doctors/index.html">Doctors</a>
-                        <a type="button" class="btn btn-outline-light navigation--button" href="./login.html">login</a>
+                            href="{{ route('doctors.index') }}">Doctors</a>
+                        <a type="button" class="btn btn-outline-light navigation--button" href="{{ route('login') }}">login</a>
+                        <a type="button" class="btn btn-outline-light navigation--button" href="{{ route('users.create') }}">Register</a>
                     </div>
                 </div>
             </div>
