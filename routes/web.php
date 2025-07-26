@@ -9,7 +9,7 @@ Route::get('/login', function () {
 })->name('login');
 
 Route::post('/login', [UserController::class, 'login'])->name('login.post');
-Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 
 Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
 Route::post('/users/create', [UserController::class, 'store'])->name('users.store');
