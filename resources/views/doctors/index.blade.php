@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="{{ asset('css/pages/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/pages/app.css') }}">
 
-    <title>Document</title>
+    <title>VCare | Doctors</title>
 </head>
 
 <body>
