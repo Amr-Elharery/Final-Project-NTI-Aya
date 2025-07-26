@@ -8,6 +8,9 @@ Route::get('/', function () {
     return view('login');
 })->name('login');
 
+Route::post('/login', [UserController::class, 'login'])->name('login.post');
+Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+
 Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
 Route::post('/users/create', [UserController::class, 'store'])->name('users.store');
 Route::get('/doctors/create', [DoctorController::class, 'create'])->name('doctors.create');
