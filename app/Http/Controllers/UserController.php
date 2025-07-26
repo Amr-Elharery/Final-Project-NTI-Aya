@@ -17,7 +17,12 @@ class UserController extends Controller
         $userphone = request()->userphone;
         $useremail = request()->useremail;
         $userpassword = request()->userpassword;
-    
+        $request->validate([
+            'username' => 'required|string|max:255',
+            'userphone' => 'required|string|max:15',
+            'useremail' => 'required|email|max:255|unique:users,email',
+            'userpassword' => 'required|string|min:8|confirmed',
+        ]);
 
         User::create([
             'name' => $username,
@@ -26,7 +31,7 @@ class UserController extends Controller
             'password' => bcrypt($userpassword),
         ]);
 
-        return redirect()->route('login');//change this later, i'm just testing
+        return redirect()->route('login');
     }
     
     public function login(Request $request){
