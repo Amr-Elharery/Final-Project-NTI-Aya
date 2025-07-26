@@ -61,16 +61,22 @@
                     <li class="breadcrumb-item active" aria-current="page">login</li>
                 </ol>
             </nav>
+            @if($errors->any())
+                <div class="alert alert-danger">
+                    {{ $errors->first() }}
+                </div>
+            @endif
             <div class="d-flex flex-column gap-3 account-form  mx-auto mt-5">
-                <form class="form">
+                <form class="form" method="POST" action="{{ route('login.post') }}">
+                    @csrf
 
                     <div class="mb-3">
                         <label class="form-label required-label" for="email">Email</label>
-                        <input type="email" class="form-control" id="email" required>
+                        <input type="email" class="form-control" id="email" name="useremail" value="{{ old('useremail') }}" required>
                     </div>
                     <div class="mb-3">
                         <label class="form-label required-label" for="password">password</label>
-                        <input type="password" class="form-control" id="password" required>
+                        <input type="password" class="form-control" id="password" name="userpassword" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Login</button>
                 </form>

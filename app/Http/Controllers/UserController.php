@@ -35,13 +35,17 @@ class UserController extends Controller
     }
     
     public function login(Request $request){
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->only('useremail', 'userpassword');
+        $request->validate([
+            'useremail' => 'required|email',
+            'userpassword' => 'required|string|min:8',
+        ]);
 
         if (auth()->attempt($credentials)) {
             return redirect()->route('doctors.index');
         }
 
-        return redirect()->back()->withErrors(['email' => 'Invalid credentials']);
+        return redirect()->back()->withInput($request->only('useremail'))->withErrors(['email' => 'Invalid credentials']);
     }
     public function logout(){
         auth()->logout();
