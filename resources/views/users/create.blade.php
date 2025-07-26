@@ -41,11 +41,11 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <div class="d-flex gap-3 flex-wrap justify-content-center" role="group">
                         <a type="button" class="btn btn-outline-light navigation--button" href="./index.html">Home</a>
+                        {{-- <a type="button" class="btn btn-outline-light navigation--button" href="./majors.html">majors</a> --}}
                         <a type="button" class="btn btn-outline-light navigation--button"
-                            href="./majors.html">majors</a>
-                        <a type="button" class="btn btn-outline-light navigation--button"
-                            href="./doctors/index.html">Doctors</a>
-                        <a type="button" class="btn btn-outline-light navigation--button" href="./login.html">login</a>
+                            href="{{ route('doctors.index') }}">Doctors</a>
+                        <a type="button" class="btn btn-outline-light navigation--button" href="{{ route('login') }}">login</a>
+                        <a type="button" class="btn btn-outline-light navigation--button" href="{{ route('users.create') }}">Register</a>
                     </div>
                 </div>
             </div>
@@ -109,12 +109,12 @@
             <div class="col-sm order-sm-2">
                 <h1 class="h1">Links</h1>
                 <div class="links d-flex gap-2 flex-wrap">
-                    <a href="./index.html" class="link text-white">Home</a>
-                    <a href="./majors.html" class="link text-white">Majors</a>
-                    <a href="./doctors/index.html" class="link text-white">Doctors</a>
-                    <a href="./login.html" class="link text-white">Login</a>
-                    <a href="./register.html" class="link text-white">Register</a>
-                    <a href="./contact.html" class="link text-white">Contact</a>
+                    <a href="{{ route('home') }}" class="link text-white">Home</a>
+                    {{-- <a href="./majors.html" class="link text-white">Majors</a> --}}
+                    <a href="{{ route('doctors.index') }}" class="link text-white">Doctors</a>
+                    <a href="{{ route('login') }}" class="link text-white">Login</a>
+                    <a href="{{ route('users.create')}}" class="link text-white">Register</a>
+                    {{-- <a href="./contact.html" class="link text-white">Contact</a> --}}
                 </div>
             </div>
         </div>
