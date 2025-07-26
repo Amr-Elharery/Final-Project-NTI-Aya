@@ -19,13 +19,27 @@ class UserController extends Controller
         $userpassword = request()->userpassword;
     
 
-    User::create([
-        'name' => $username,
-        'phone' => $userphone,
-        'email' => $useremail,
-        'password' => bcrypt($userpassword),
-    ]);
+        User::create([
+            'name' => $username,
+            'phone' => $userphone,
+            'email' => $useremail,
+            'password' => bcrypt($userpassword),
+        ]);
 
-    return redirect()->route('users.create');//change this later, i'm just testing
-}
+        return redirect()->route('login');//change this later, i'm just testing
+    }
+    
+    public function login(Request $request){
+        $credentials = $request->only('email', 'password');
+
+        if (auth()->attempt($credentials)) {
+            return redirect()->route('doctors.index');
+        }
+
+        return redirect()->back()->withErrors(['email' => 'Invalid credentials']);
+    }
+    public function logout(){
+        auth()->logout();
+        return redirect()->route('login');
+    }
 }
