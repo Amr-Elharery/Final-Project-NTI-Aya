@@ -13,8 +13,8 @@ Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
 Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
 Route::post('/users/create', [UserController::class, 'store'])->name('users.store');
-Route::get('/doctors/create', [DoctorController::class, 'create'])->name('doctors.create');
-Route::post('/doctors/create', [DoctorController::class, 'store'])->name('doctors.store');
-Route::get('/doctors/index', [DoctorController::class, 'index'])->name('doctors.index');
-Route::get('/doctors/edit', [DoctorController::class, 'update'])->name('doctors.update');
+Route::get('/doctors/create', [DoctorController::class, 'create'])->name('doctors.create')->middleware('auth');
+Route::post('/doctors/create', [DoctorController::class, 'store'])->name('doctors.store')->middleware('auth');
+Route::get('/doctors/index', [DoctorController::class, 'index'])->name('doctors.index')->middleware('auth');
+Route::get('/doctors/edit', [DoctorController::class, 'update'])->name('doctors.update')->middleware('auth');
 
