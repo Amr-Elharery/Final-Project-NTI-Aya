@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="{{ asset('css/pages/app.css') }}">
 
 
-    <title>Document</title>
+    <title>VCare | Login</title>
 </head>
 
 <body>
