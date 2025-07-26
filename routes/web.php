@@ -8,6 +8,11 @@ Route::get('/login', function () {
     return view('login');
 })->name('login');
 
+//Dummy route for home
+Route::get('/home', function () {
+    return view('welcome');
+})->name('home');
+
 Route::post('/login', [UserController::class, 'login'])->name('login.post');
 Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 
