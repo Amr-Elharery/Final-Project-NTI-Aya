@@ -10,7 +10,7 @@ Route::get('/login', function () {
 
 //Dummy route for home
 Route::get('/home', function () {
-    return view('welcome');
+    return view('index');
 })->name('home');
 
 Route::post('/login', [UserController::class, 'login'])->name('login.post');
